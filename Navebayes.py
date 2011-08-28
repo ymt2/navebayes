@@ -38,7 +38,7 @@ class Navebayes:
         tp = [p for w, p in wl]
         tip = [float(1-p) for w, p in wl]
         product = lambda l: reduce(lambda x, y: x*y, l)
-        return float(product(tp)) / (float(product(tp)) - float(product(tip)))
+        return float(product(tp)) / (float(product(tp)) + float(product(tip)))
     
     def getWordprobabilityDic(self):
 	self._setWordprobability()
